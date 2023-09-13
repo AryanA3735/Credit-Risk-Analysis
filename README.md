@@ -1,4 +1,3 @@
-# Credit-Risk-Insights
-It is an interactive tool designed for building, comparing, and interpreting credit risk models. It empowers users to make informed decisions by analyzing credit risk through various techniques. With a user-friendly interface built using Streamlit, it simplifies the model-building process. The tool provides a platform to explore different model types, evaluate their effectiveness, and interpret results. It offers a comprehensive solution for understanding and managing credit risk.
+# Credit-Risk-Scorecard
+I developed a machine learning-driven credit risk assessment solution to predict bad loans. This includes Data Preprocessing, Exploratory Data Analysis, Feature Engineering, and Data Modeling. Various regression algorithms such as Logistic Regression, XGBoost, Random Forest, Elastic Net, Light GBM, and Robust (RANSAC) are employed to forecast credit risk associated with each loan and optimized their performance through hyperparameter tuning. Assessed both precision and recall specifically for 'bad' loans. which helps us in minimizing losses and maximizing approvals. For user interaction, I created a user-friendly application using Streamlit for the frontend and FastAPI for the backend, offering a seamless and accessible interface for credit risk scorecard assessment.
 
-Complete graphviz installation  :  https://graphviz.org/download/
