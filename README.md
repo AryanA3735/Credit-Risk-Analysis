@@ -1,1 +1,1 @@
-# Credit-Risk-Management
+# Credit-Risk-Insights
