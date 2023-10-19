@@ -7,9 +7,9 @@ import pandas as pd
 import pickle
 
 # Initialization
-with open('D:/Career/Project/IBRD/models/final_scorecard.pkl', 'rb') as file:
+with open('D:/Career/Project/Credit Risk Analysis/models/final_scorecard.pkl', 'rb') as file:
     scorecard = pickle.load(file)
-with open('D:/Career/Project/IBRD/src/back_end/config/binnings.json', 'r') as file:
+with open('D:/Career/Project/Credit Risk Analysis/src/back_end/config/binnings.json', 'r') as file:
     binnings = json.load(file)
 app = FastAPI()
 
@@ -23,6 +23,9 @@ def country_guarantor_status_generator(raw_data):
                                                           else ("no_guarantor"
                                                                 if pd.isnull(row["guarantor"])
                                                                 else "differ"), axis=1)
+    
+    # print(raw_data["country_guarantor_status"])
+
     return raw_data
 
 
@@ -102,8 +105,10 @@ def get_score(encoded_data, scorecard):
 
 @app.post('/score')
 def score_data(item: Item):
+    print("yay")
     raw_data = pd.DataFrame(item.data, index=[0])
     binned_data = feature_engineering(raw_data)
     encoded_data = one_hot_encoding(binned_data)
     score = get_score(encoded_data, scorecard)
+    print(score)
     return {"score": score}
