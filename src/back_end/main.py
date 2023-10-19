@@ -7,9 +7,9 @@ import pandas as pd
 import pickle
 
 # Initialization
-with open('D:/Career/Project/Credit Risk Analysis/models/final_scorecard.pkl', 'rb') as file:
+with open('D:/Career/Project/Credit-Risk-Analysis/models/final_scorecard.pkl', 'rb') as file:
     scorecard = pickle.load(file)
-with open('D:/Career/Project/Credit Risk Analysis/src/back_end/config/binnings.json', 'r') as file:
+with open('D:/Career/Project/Credit-Risk-Analysis/src/back_end/config/binnings.json', 'r') as file:
     binnings = json.load(file)
 app = FastAPI()
 
