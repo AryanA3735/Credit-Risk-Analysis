@@ -1,5 +1,6 @@
 # Import Libraries
 from fastapi import FastAPI
+import uvicorn
 from pydantic import BaseModel
 import json
 import numpy as np
@@ -112,3 +113,8 @@ def score_data(item: Item):
     score = get_score(encoded_data, scorecard)
     print(score)
     return {"score": score}
+
+if __name__ == "__main__":
+    uvicorn.run(app)
+
+# uvicorn app:app --reload
